@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">STBDSKUY</string>
+    <string name="STBD">STBD SKUY</string>
+    <string name="daftar">Daftar Tempat</string>
+    <string name="upload">Upload Image</string>
+    <string name="nama">Nama Tempat</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="jarak">Jarak</string>
+    <string name="tambah">Tambah</string>
+</resources>
