@@ -1,12 +1,15 @@
 package com.example.stbdskuy
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
@@ -30,6 +33,10 @@ class MainActivity : AppCompatActivity() {
             viewHolder.itemView.tv_nama_tempat.text = iniData.nama
             viewHolder.itemView.tv_desc_tempat.text = iniData.deskripsi
             viewHolder.itemView.tv_jarak.text = iniData.Jarak
+            if (iniData.imageUrl != "null"){
+                val ivImagetTempat = viewHolder.itemView.iv_imageTempat
+                Picasso.get().load(iniData.imageUrl).into(ivImagetTempat)
+            }
         }
 
         override fun getLayout(): Int {
@@ -37,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    val adapter = GroupAdapter<GroupieViewHolder>()
     fun tampilData(){
         val ref = FirebaseDatabase.getInstance().getReference("db")
         ref.addValueEventListener(object : ValueEventListener {
@@ -47,18 +55,19 @@ class MainActivity : AppCompatActivity() {
                         val iniData = h.getValue(dataclass::class.java)
                         if (iniData != null) {
                             adapter.add(simpanData(iniData))
+                            println("DATA => ${iniData.Jarak}")
                         }
                     }
+                    rv_utama.layoutManager = LinearLayoutManager(this@MainActivity)
+                    rv_utama.adapter = adapter
                 }
             }
-
             override fun onCancelled(p0: DatabaseError) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
         })
 
     }
-    val adapter = GroupAdapter<GroupieViewHolder>()
 
 
 }

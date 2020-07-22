@@ -30,17 +30,23 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp" />
 
-        <Button
-            android:id="@+id/btn_pindahtambah"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom|right"
-            android:background="@drawable/sedikitbulat"
-            android:text="+"
-            android:textColor="@android:color/white"
-            android:textSize="35dp" />
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_pindahtambah"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/sedikitbulat"
+        android:text="+"
+        android:textColor="@android:color/white"
+        android:textSize="35sp" />
 
 
 
