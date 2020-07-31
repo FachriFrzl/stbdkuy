@@ -1,6 +1,4 @@
-package com.example.stbdskuy
-
-import android.net.Uri
+package com.stbd.stbdskuy
 
 class dataclass
     (
@@ -9,8 +7,9 @@ class dataclass
     var deskripsi : String,
     var imageUrl  : String,
     var lokasi    : String,
-    var Jarak     : String
+    var Jarak     : String,
+    var estimasi  : String
     )
 {
-constructor():this("","","","","",""){}
+constructor():this("","","","","","",""){}
 }

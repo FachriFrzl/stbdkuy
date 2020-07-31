@@ -1,4 +1,4 @@
-package com.example.stbdskuy
+package com.stbd.stbdskuy
 
 import org.junit.Test
 

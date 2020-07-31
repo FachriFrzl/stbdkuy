@@ -1,4 +1,4 @@
-package com.example.stbdskuy
+package com.stbd.stbdskuy
 
 import android.app.Activity
 import android.content.Intent
@@ -69,8 +69,9 @@ class tambahtempat : AppCompatActivity() {
         val deskripsi = ed_deskripsi.text.toString()
         val lokasi = ed_lokasi.text.toString()
         val jarak = ed_jarak.text.toString()
+        val estimasi = ed_estimasi.text.toString()
 
-        val tempat = dataclass(uid, nama, deskripsi, imageUrl, lokasi, jarak)
+        val tempat = dataclass(uid, nama, deskripsi, imageUrl, lokasi, jarak,estimasi)
 
         ref.setValue(tempat)
             .addOnSuccessListener {
